@@ -21,13 +21,21 @@ async function main() {
   // Verify the contract if only on sepolia network and etherscan api key is provided
   // not on hardhat network because it is not on etherscan
   if (network.config.chainId === 11155111 && process.env.ETHERSCAN_API_KEY) {
-    // 6 blocks is sort of a guess
+    // 5 blocks is sort of a guess
     console.log("Verifying contract in 5 blocks...");
     await simpleStorage.deploymentTransaction()?.wait(5);
     await verify(contractAddress!, []);
   }
 
   const currentValue = await simpleStorage.retrieve();
+  console.log("Current value:", currentValue.toString());
+
+  console.log("Updating storage value...");
+  const transactionResponse = await simpleStorage.store(10);
+  await transactionResponse.wait();
+
+  const updatedValue = await simpleStorage.retrieve();
+  console.log("Updated value:", updatedValue.toString());
 }
 
 // Verify the contract on etherscan either using etherscan api (progmmatically) or manually
