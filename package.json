@@ -27,6 +27,7 @@
   },
   "scripts": {
     "lint": "yarn prettier --check .",
-    "lint:fix": "yarn prettier --write ."
+    "lint:fix": "yarn prettier --write .",
+    "web-compile": "tsc ./frontend/script.ts --outDir ./frontend"
   }
 }
