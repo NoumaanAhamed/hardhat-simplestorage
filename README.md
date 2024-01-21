@@ -1,5 +1,11 @@
 # Hardhat Simple Storage - Getting Started
 
+## Preview
+
+![Hardhat Simple Storage](./media/image.png)
+
+Refer docs : https://docs.ethers.org/v6/getting-started/
+
 ## Requirements
 
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
