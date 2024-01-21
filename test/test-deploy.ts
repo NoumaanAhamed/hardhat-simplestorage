@@ -28,4 +28,15 @@ describe("SimpleStorage", function () {
     const favoriteNumber = await simpleStorage.retrieve();
     assert.equal(favoriteNumber.toString(), expectedFavoriteNumber.toString());
   });
+  it("should be able to add a person", async function () {
+    const expectedName = "Noumaan";
+    const expectedFavoriteNumber = 69;
+    await simpleStorage.addPerson(expectedName, expectedFavoriteNumber);
+    const person = await simpleStorage.people(0);
+    assert.equal(person.name, expectedName);
+    assert.equal(
+      person.favoriteNumber.toString(),
+      expectedFavoriteNumber.toString(),
+    );
+  });
 });
