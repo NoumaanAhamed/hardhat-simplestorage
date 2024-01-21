@@ -31,10 +31,26 @@ async function main() {
   console.log("Current value:", currentValue.toString());
 
   console.log("Updating storage value...");
-  const transactionResponse = await simpleStorage.store(10);
+  let transactionResponse = await simpleStorage.store(10);
   await transactionResponse.wait();
 
-  const updatedValue = await simpleStorage.retrieve();
+  let updatedValue = await simpleStorage.retrieve();
+  console.log("Updated value:", updatedValue.toString());
+
+  transactionResponse = await simpleStorage.addPerson("Noumaan", 69);
+  await transactionResponse.wait();
+
+  let person = await simpleStorage.people(0);
+  console.log("Person:", person.name);
+
+  let favNumOfPerson = await simpleStorage.nameToFavoriteNumber("Noumaan");
+  console.log("Favorite number of Noumaan:", favNumOfPerson.toString());
+
+  console.log("Updating favorite number of Noumaan...");
+  transactionResponse = await simpleStorage.store(favNumOfPerson);
+  await transactionResponse.wait();
+
+  updatedValue = await simpleStorage.retrieve();
   console.log("Updated value:", updatedValue.toString());
 }
 
