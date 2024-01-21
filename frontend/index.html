@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <title>Basic Simple Storage App</title>
+    <link rel="stylesheet" href="./styles.css">
     <script defer src="./script.js" type="module"></script>
 </head>
 <body>
-    Hello!
-    <!-- Display a connect button and the current account -->
-<button class="enableEthereumButton">Enable Ethereum</button>
-<h2>Account: <span class="showAccount"></span></h2>
+    <div class="container">
+        <h1>Basic Simple Storage App</h1>
+        <div class="button-container">
+            <button class="connectButton">Connect Wallet</button>
+            <button class="disconnectButton" disabled>Disconnect</button>
+        </div>
+        <div class="info-container">
+            <h2>Account: <span class="showAccount"></span></h2>
+            <h2>Stored Value: <span class="showValue"></span></h2>
+        </div>
+        <div class="input-container">
+            <input class="newValue" placeholder="Enter a new value"></input>
+        </div>
+        <div class="action-container">
+            <button class="setValueButton" disabled>Set Value</button>
+            <button class="getValueButton" disabled>Get Value</button>
+        </div>
+    </div>
 </body>
 </html>

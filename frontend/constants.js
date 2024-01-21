@@ -2,8 +2,16 @@ export const contractAddress = "0x07780a3d9280a1231b42eaFCE7e904eA79A5Cdd0";
 export const abi = [
   {
     inputs: [
-      { internalType: "string", name: "_name", type: "string" },
-      { internalType: "uint256", name: "_favoriteNumber", type: "uint256" },
+      {
+        internalType: "string",
+        name: "_name",
+        type: "string",
+      },
+      {
+        internalType: "uint256",
+        name: "_favoriteNumber",
+        type: "uint256",
+      },
     ],
     name: "addPerson",
     outputs: [],
@@ -11,18 +19,44 @@ export const abi = [
     type: "function",
   },
   {
-    inputs: [{ internalType: "string", name: "", type: "string" }],
+    inputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+    ],
     name: "nameToFavoriteNumber",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
     name: "people",
     outputs: [
-      { internalType: "uint256", name: "favoriteNumber", type: "uint256" },
-      { internalType: "string", name: "name", type: "string" },
+      {
+        internalType: "uint256",
+        name: "favoriteNumber",
+        type: "uint256",
+      },
+      {
+        internalType: "string",
+        name: "name",
+        type: "string",
+      },
     ],
     stateMutability: "view",
     type: "function",
@@ -30,13 +64,23 @@ export const abi = [
   {
     inputs: [],
     name: "retrieve",
-    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [
-      { internalType: "uint256", name: "_favoriteNumber", type: "uint256" },
+      {
+        internalType: "uint256",
+        name: "_favoriteNumber",
+        type: "uint256",
+      },
     ],
     name: "store",
     outputs: [],
