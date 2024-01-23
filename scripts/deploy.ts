@@ -12,6 +12,8 @@ async function main() {
   )) as unknown as SimpleStorage__factory;
   console.log("Deploying SimpleStorage...");
   simpleStorage = await SimpleStorageFactory.deploy();
+  // const address = await simpleStorage.getAddress();
+  // console.log("SimpleStorage is deployed to:", address);
   const txReceipt = await simpleStorage.deploymentTransaction()?.wait();
 
   const contractAddress = txReceipt?.contractAddress;

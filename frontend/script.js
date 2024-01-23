@@ -62,10 +62,10 @@ async function getAccount() {
         console.error(err);
       }
     });
-  connectButton.textContent = "Connected";
   const account = accounts[0];
   showAccount.innerHTML = account;
   provider = new ethers.BrowserProvider(window.ethereum);
+  connectButton.textContent = "Connected";
   signer = await provider.getSigner();
   contractSigner = new ethers.Contract(contractAddress, abi, signer);
 }

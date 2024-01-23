@@ -126,5 +126,19 @@ yarn hardhat run scripts/deploy.ts
 yarn hardhat run scripts/deploy.ts --network sepolia
 ```
 
+# Test the frontend locally
+
+```
+yarn hardhat node
+yarn hardhat run scripts/deploy.ts --network localhost
+```
+
+- Copy the contract address from the output
+- Paste it into `frontend/constants.js` as the `contractAddress` variable
+- Switch metamask to `localhost` network
+- Import the private key from the `localhost` account
+- Reset your metamask account (if using already imported account)
+- start the frontend
+
 
 # Thank you!
